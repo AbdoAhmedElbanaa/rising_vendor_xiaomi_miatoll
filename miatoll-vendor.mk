@@ -361,6 +361,7 @@ PRODUCT_PACKAGES += \
     libarcsoft_portrait_lighting_system \
     libarcsoft_portrait_lighting_c_system \
     libcamera_algoup_jni.xiaomi \
+    libcamera_jpegutil_jni.xiaomi \
     libcamera_mianode_jni.xiaomi \
     libdoc_photo \
     libdoc_photo_c++_shared \
@@ -1011,15 +1012,14 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     system_system_priv-app_MiuiCamera_lib_arm64_libcamera_algoup_jni_xiaomi_so \
+    system_system_priv-app_MiuiCamera_lib_arm64_libcamera_jpegutil_jni_xiaomi_so \
     system_system_priv-app_MiuiCamera_lib_arm64_libcamera_mianode_jni_xiaomi_so \
     system_system_priv-app_MiuiExtraPhoto_lib_arm64_libdoc_photo_so \
-    system_system_priv-app_MiuiExtraPhoto_lib_arm64_libdoc_photo_c++_shared_so \
     system_system_priv-app_MiuiExtraPhoto_lib_arm64_libgallery_arcsoft_dualcam_refocus_so \
     system_system_priv-app_MiuiExtraPhoto_lib_arm64_libgallery_arcsoft_portrait_lighting_so \
     system_system_priv-app_MiuiExtraPhoto_lib_arm64_libgallery_arcsoft_portrait_lighting_c_so \
     system_system_priv-app_MiuiExtraPhoto_lib_arm64_libgallery_mpbase_so \
     system_system_priv-app_MiuiExtraPhoto_lib_arm64_libmibokeh_gallery_so \
-    system_system_priv-app_MiuiExtraPhoto_lib_arm64_librefocus_so \
     system_system_priv-app_MiuiExtraPhoto_lib_arm64_librefocus_mibokeh_so \
     system_ext_priv-app_WfdService_lib_arm64_libwfdnative_so \
     vendor_lib_libEGL_adreno_so \
@@ -1028,6 +1028,9 @@ PRODUCT_PACKAGES += \
     vendor_lib64_libEGL_adreno_so \
     vendor_lib64_libGLESv2_adreno_so \
     vendor_lib64_libq3dtools_adreno_so
+
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miatoll/proprietary/system/priv-app/MiuiExtraPhoto/lib/arm64,$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiExtraPhoto/lib/arm64)
 
 PRODUCT_BOOT_JARS += \
     WfdCommon

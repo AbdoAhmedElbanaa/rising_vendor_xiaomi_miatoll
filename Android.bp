@@ -231,6 +231,42 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libcamera_jpegutil_jni.xiaomi",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system/lib64/libcamera_jpegutil_jni.xiaomi.so",
+            ],
+            shared_libs: [
+                "libion",
+                "libmedia",
+                "libcamera_client",
+                "libandroid_runtime",
+                "libnativehelper",
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libgui",
+                "libui",
+                "libbinder",
+                "libhidlbase",
+                "libhidltransport",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libcamera_mianode_jni.xiaomi",
     owner: "xiaomi",
     strip: {
@@ -19095,6 +19131,12 @@ install_symlink {
 }
 
 install_symlink {
+    name: "system_system_priv-app_MiuiCamera_lib_arm64_libcamera_jpegutil_jni_xiaomi_so",
+    installed_location: "system/priv-app/MiuiCamera/lib/arm64/libcamera_jpegutil_jni.xiaomi.so",
+    symlink_target: "/system/lib64/libcamera_jpegutil_jni.xiaomi.so",
+}
+
+install_symlink {
     name: "system_system_priv-app_MiuiCamera_lib_arm64_libcamera_mianode_jni_xiaomi_so",
     installed_location: "system/priv-app/MiuiCamera/lib/arm64/libcamera_mianode_jni.xiaomi.so",
     symlink_target: "/system/lib64/libcamera_mianode_jni.xiaomi.so",
@@ -19104,12 +19146,6 @@ install_symlink {
     name: "system_system_priv-app_MiuiExtraPhoto_lib_arm64_libdoc_photo_so",
     installed_location: "system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo.so",
     symlink_target: "/system/lib64/libdoc_photo.so",
-}
-
-install_symlink {
-    name: "system_system_priv-app_MiuiExtraPhoto_lib_arm64_libdoc_photo_c++_shared_so",
-    installed_location: "system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo_c++_shared.so",
-    symlink_target: "/system/lib64/libdoc_photo_c++_shared.so",
 }
 
 install_symlink {
@@ -19140,12 +19176,6 @@ install_symlink {
     name: "system_system_priv-app_MiuiExtraPhoto_lib_arm64_libmibokeh_gallery_so",
     installed_location: "system/priv-app/MiuiExtraPhoto/lib/arm64/libmibokeh_gallery.so",
     symlink_target: "/system/lib64/libmibokeh_gallery.so",
-}
-
-install_symlink {
-    name: "system_system_priv-app_MiuiExtraPhoto_lib_arm64_librefocus_so",
-    installed_location: "system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus.so",
-    symlink_target: "/system/lib64/librefocus.so",
 }
 
 install_symlink {
